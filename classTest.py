@@ -42,7 +42,7 @@ evenClass.process()
 anyClass = Factory.factory("any")
 anyClass.process()
 
-#Factory.factory("SHOOT")
+#Factory.factory("SHOOT"))
 
 #nonExists = Factory.factory("smth")
 #nonExists.process()
