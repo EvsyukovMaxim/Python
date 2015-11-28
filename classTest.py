@@ -14,7 +14,7 @@ class Factory():
 			myevenClass = evenClass()
 			return myevenClass
 
-		else:
+		else: # throwing exceptions
 			print "I do not know what is this"
 	factory = staticmethod(factory)
 
@@ -42,7 +42,7 @@ evenClass.process()
 anyClass = Factory.factory("any")
 anyClass.process()
 
-#Factory.factory("SHOOT")) cool
+#Factory.factory("SHOOT")
 
 #nonExists = Factory.factory("smth")
 #nonExists.process()
