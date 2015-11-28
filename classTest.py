@@ -13,10 +13,16 @@ class Factory():
 		elif name == "even":
 			myevenClass = evenClass()
 			return myevenClass
-
-		else: # throwing exceptions
-			print "I do not know what is this"
+		else:
+			try:
+				raise ValueError('Exception masage')
+			except ValueError as err:
+				print(err.args)
+				print "Usual print via Else"
+			
 	factory = staticmethod(factory)
+
+
 
 class oddClass():
 
@@ -33,6 +39,9 @@ class anyClass():
 	def process(self):
 		print "CAN'T wait for ANY!"
 
+
+		
+
 oddClass = Factory.factory("odd")
 oddClass.process()
 
@@ -42,7 +51,6 @@ evenClass.process()
 anyClass = Factory.factory("any")
 anyClass.process()
 
-#Factory.factory("SHOOT")
-
-#nonExists = Factory.factory("smth")
+#nonExists = 
+Factory.factory("SHOOT")
 #nonExists.process()
