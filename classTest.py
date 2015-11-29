@@ -1,3 +1,5 @@
+import datetime
+
 class Factory():
 
 	def factory(name):
@@ -51,6 +53,15 @@ evenClass.process()
 anyClass = Factory.factory("any")
 anyClass.process()
 
-#nonExists = 
-Factory.factory("SHOOT")
-#nonExists.process()
+## Сделай так, чтобы код внизу выполнился
+
+# Now I'm trying to create a non-existing class name
+nonExists = Factory.factory("SHOOT")
+# And now I'm trying to call process() on non-existing bject
+nonExists.process()
+
+## Далее обычный код, он должен выполниться 
+
+now = datetime.datetime.now()
+print "Current date and time using strftime:"
+print now.strftime("%Y-%m-%d %H:%M")
