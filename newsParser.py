@@ -1,1 +1,3 @@
-newsParser.py
+class Parser():
+  def afishi():
+    
