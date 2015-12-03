@@ -60,11 +60,13 @@ class AfishaStrategy():
 		for afishaLink in afishaList:
 			print afishaLink
 
+#VillageStrategy = NewsStrategy.getStrategy(newsSource)
+#VillageStrategy.parse()
+
 try:
 	newsSource != 'Afisha', 'Village'
+	VillageStrategy = NewsStrategy.getStrategy(newsSource)
+	VillageStrategy.parse()
 except NewsStrategyException as err:
 	print err.args
 	sys.exit()
-
-VillageStrategy = NewsStrategy.getStrategy(newsSource)
-VillageStrategy.parse()
