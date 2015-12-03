@@ -64,7 +64,6 @@ class AfishaStrategy():
 #VillageStrategy.parse()
 
 try:
-	newsSource != 'Afisha', 'Village'
 	VillageStrategy = NewsStrategy.getStrategy(newsSource)
 	VillageStrategy.parse()
 except NewsStrategyException as err:
