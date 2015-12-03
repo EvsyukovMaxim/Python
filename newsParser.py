@@ -6,6 +6,8 @@ if len(sys.argv) != 2:
 
 newsSource = sys.argv[1]
 
+class NewsStrategyException(Exception):
+	pass
 
 class NewsStrategy():
 	@staticmethod
@@ -16,6 +18,8 @@ class NewsStrategy():
 		elif newsSource == 'Afisha':
 			myAfishaStrategy = AfishaStrategy()
 			return myAfishaStrategy
+		else:
+			raise NewsStrategyException('Would you be kind dont put any other stuFf in here !!!')
 
 
 class VillageStrategy():
@@ -55,6 +59,12 @@ class AfishaStrategy():
 
 		for afishaLink in afishaList:
 			print afishaLink
+
+try:
+	newsSource != 'Afisha', 'Village'
+except NewsStrategyException as err:
+	print err.args
+	sys.exit()
 
 VillageStrategy = NewsStrategy.getStrategy(newsSource)
 VillageStrategy.parse()
