@@ -29,6 +29,7 @@ class NewsStrategy():
 class VillageStrategy():
 	def parse(self):
 
+		myNewsObject = NewsObject()
 		villageList = []
 		villageList.append(myNewsObject)
 		return villageList
@@ -38,24 +39,15 @@ class AfishaStrategy():
 	def parse(self):
 
 		afishaList = []
-		afishaList.append(myNewsObject1)
+		afishaList.append(myNewsObject)
 		return afishaList
 
 
 class NewsObject():
 	title = ''
-	preview = ''	
-myNewsObject = NewsObject()
-myNewsObject.title = "Moscow morning!"
-myNewsObject.preview = "fourth december"
-
-
-class NewsObject1():
-	title = ''
 	preview = ''
-myNewsObject1 = NewsObject1()
-myNewsObject1.title = u"Шпионский Мост!"
-myNewsObject1.preview = u"Исторический триллер про холодную войну от Стивена Спилберга"
+NewsObject.title = "Moscow morning!"
+NewsObject.preview = "fourth december"
 
 
 try:
