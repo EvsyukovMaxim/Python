@@ -8,8 +8,10 @@ if len(sys.argv) != 2:
 
 newsSource = sys.argv[1]
 
+
 class NewsStrategyException(Exception):
 	pass
+
 
 class NewsStrategy():
 	@staticmethod
@@ -28,24 +30,33 @@ class VillageStrategy():
 	def parse(self):
 
 		villageList = []
-		villageList.append(myNewsObject.title)
-		villageList.append(myNewsObject.preview)
+		villageList.append(myNewsObject)
 		return villageList
+
 		
 class AfishaStrategy():
 	def parse(self):
 
 		afishaList = []
-		afishaList.append(NewsObject.title)
-		afishaList.append(NewsObject.preview)
+		afishaList.append(myNewsObject1)
 		return afishaList
+
 
 class NewsObject():
 	title = ''
+	preview = ''	
+myNewsObject = NewsObject()
+myNewsObject.title = "Moscow morning!"
+myNewsObject.preview = "fourth december"
+
+
+class NewsObject1():
+	title = ''
 	preview = ''
-myNewsObject = NewsObject
-myNewsObject.title = u"Утром Москвы!"
-myNewsObject.preview = u"УТРО В МОСКВЕ - 4 декабря"
+myNewsObject1 = NewsObject1()
+myNewsObject1.title = u"Шпионский Мост!"
+myNewsObject1.preview = u"Исторический триллер про холодную войну от Стивена Спилберга"
+
 
 try:
 	VillageStrategy = NewsStrategy.getStrategy(newsSource)
