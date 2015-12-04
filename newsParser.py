@@ -34,6 +34,8 @@ class VillageStrategy():
 		myNewsObject.preview = "Spider-Man was seen in Novosibirsk"
 		villageList = []
 		villageList.append(myNewsObject)
+		print myNewsObject.title
+		print myNewsObject.preview
 		return villageList
 
 		
@@ -45,8 +47,9 @@ class AfishaStrategy():
 		myNewsObject.preview = "Hitler got a tail!!!"
 		afishaList = []
 		afishaList.append(myNewsObject)
+		print myNewsObject.title
+		print myNewsObject.preview
 		return afishaList
-
 
 class NewsObject():
 	title = ''
