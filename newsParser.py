@@ -51,8 +51,6 @@ class AfishaStrategy():
 class NewsObject():
 	title = ''
 	preview = ''
-NewsObject.title = "Moscow morning!"
-NewsObject.preview = "fourth december"
 
 
 try:
