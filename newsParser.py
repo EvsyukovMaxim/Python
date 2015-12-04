@@ -29,10 +29,10 @@ class VillageStrategy():
 
 		villageList = []
 		villageList.append(myNewsObject.title)
-		#villageList.append(myNewsObject.preview)
+		villageList.append(myNewsObject.preview)
 
-		#for villageLink in villageList:
-		print villageList
+		for villageLink in villageList:
+			print villageLink
 
 class AfishaStrategy():
 	def parse(self):
@@ -57,8 +57,8 @@ class NewsObject():
 	title = ''
 	preview = ''
 myNewsObject = NewsObject
-myNewsObject.title = u"Утро Москвы"
-#myNewsObject.preview = 'УТРО В МОСКВЕ - 4 декабря'
+myNewsObject.title = u"Утром Москвы!"
+myNewsObject.preview = u'УТРО В МОСКВЕ - 4 декабря'
 
 
 try:
