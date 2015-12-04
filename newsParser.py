@@ -37,7 +37,8 @@ class VillageStrategy():
 		
 class AfishaStrategy():
 	def parse(self):
-
+		
+		myNewsObject = NewsObject()
 		afishaList = []
 		afishaList.append(myNewsObject)
 		return afishaList
