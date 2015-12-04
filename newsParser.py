@@ -35,21 +35,10 @@ class VillageStrategy():
 class AfishaStrategy():
 	def parse(self):
 
-		newsObject1 = ("http://www.afisha.ru/")
-		newsObject2 = ("http://www.afisha.ru/novosibirsk/cinema/")
-		newsObject3 = ("http://www.afisha.ru/novosibirsk/concerts/")
-		newsObject4 = ("http://www.afisha.ru/novosibirsk/exhibitions/")
-		newsObject5 = ("http://www.afisha.ru/novosibirsk/theatre/")
-
 		afishaList = []
-		afishaList.append(newsObject1)
-		afishaList.append(newsObject2)
-		afishaList.append(newsObject3)
-		afishaList.append(newsObject4)
-		afishaList.append(newsObject5)
-
-		for afishaLink in afishaList:
-			print afishaLink
+		afishaList.append(NewsObject.title)
+		afishaList.append(NewsObject.preview)
+		return afishaList
 
 class NewsObject():
 	title = ''
@@ -57,7 +46,6 @@ class NewsObject():
 myNewsObject = NewsObject
 myNewsObject.title = u"Утром Москвы!"
 myNewsObject.preview = u"УТРО В МОСКВЕ - 4 декабря"
-
 
 try:
 	VillageStrategy = NewsStrategy.getStrategy(newsSource)
