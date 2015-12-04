@@ -1,3 +1,5 @@
+# -*- coding: utf-8 -*-
+
 import sys
 
 if len(sys.argv) != 2:
@@ -24,44 +26,40 @@ class NewsStrategy():
 
 class VillageStrategy():
 	def parse(self):
-			
-		newObject1 = ("http://www.the-village.ru/")
-		newObject2 = ("http://www.the-village.ru/news")
-		newObject3 = ("http://www.the-village.ru/village/city/moscow-morning/227313-3-dekabrya")
-		newObject4 = ("http://www.the-village.ru/village/city/people/227157-scientists")
-		newObject5 = ("http://ads.adfox.ru/5024/goLink?pr=cvpfmkj&p5=defwo&p1=ccsi&p2=cbf")
 
 		villageList = []
-		villageList.append(newObject1)
-		villageList.append(newObject2)
-		villageList.append(newObject3)
-		villageList.append(newObject4)
-		villageList.append(newObject5)
+		villageList.append(myNewsObject.title)
+		#villageList.append(myNewsObject.preview)
 
-		for villageLink in villageList:
-			print villageLink
+		#for villageLink in villageList:
+		print villageList
 
 class AfishaStrategy():
 	def parse(self):
 
-		newObject1 = ("http://www.afisha.ru/")
-		newObject2 = ("http://www.afisha.ru/novosibirsk/cinema/")
-		newObject3 = ("http://www.afisha.ru/novosibirsk/concerts/")
-		newObject4 = ("http://www.afisha.ru/novosibirsk/exhibitions/")
-		newObject5 = ("http://www.afisha.ru/novosibirsk/theatre/")
+		newsObject1 = ("http://www.afisha.ru/")
+		newsObject2 = ("http://www.afisha.ru/novosibirsk/cinema/")
+		newsObject3 = ("http://www.afisha.ru/novosibirsk/concerts/")
+		newsObject4 = ("http://www.afisha.ru/novosibirsk/exhibitions/")
+		newsObject5 = ("http://www.afisha.ru/novosibirsk/theatre/")
 
 		afishaList = []
-		afishaList.append(newObject1)
-		afishaList.append(newObject2)
-		afishaList.append(newObject3)
-		afishaList.append(newObject4)
-		afishaList.append(newObject5)
+		afishaList.append(newsObject1)
+		afishaList.append(newsObject2)
+		afishaList.append(newsObject3)
+		afishaList.append(newsObject4)
+		afishaList.append(newsObject5)
 
 		for afishaLink in afishaList:
 			print afishaLink
 
-#VillageStrategy = NewsStrategy.getStrategy(newsSource)
-#VillageStrategy.parse()
+class NewsObject():
+	title = ''
+	preview = ''
+myNewsObject = NewsObject
+myNewsObject.title = u"Утро Москвы"
+#myNewsObject.preview = 'УТРО В МОСКВЕ - 4 декабря'
+
 
 try:
 	VillageStrategy = NewsStrategy.getStrategy(newsSource)
