@@ -29,9 +29,7 @@ class VillageStrategy():
 
 		villageList = []
 		villageList.append(myNewsObject.title)
-		print myNewsObject.title
 		villageList.append(myNewsObject.preview)
-		print myNewsObject.preview
 		return villageList
 		
 class AfishaStrategy():
