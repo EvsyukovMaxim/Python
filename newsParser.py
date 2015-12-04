@@ -30,6 +30,8 @@ class VillageStrategy():
 	def parse(self):
 
 		myNewsObject = NewsObject()
+		myNewsObject.title = "Moscow vs Batman"
+		myNewsObject.preview = "Spider-Man was seen in Novosibirsk"
 		villageList = []
 		villageList.append(myNewsObject)
 		return villageList
@@ -37,8 +39,10 @@ class VillageStrategy():
 		
 class AfishaStrategy():
 	def parse(self):
-		
+
 		myNewsObject = NewsObject()
+		myNewsObject.title = "There was Hitler cought under the bridge"
+		myNewsObject.preview = "Hitler got a tail!!!"
 		afishaList = []
 		afishaList.append(myNewsObject)
 		return afishaList
