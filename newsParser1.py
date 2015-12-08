@@ -3,12 +3,11 @@ from HTMLParser import HTMLParser
 from htmlentitydefs import name2codepoint
 
 class MyHTMLParser(HTMLParser):
-    #def handle_starttag(self, tag, attrs):
-     #   print "Encountered a start tag:", tag
-    #def handle_endtag(self, tag):
-    #    print "Encountered an end tag :", tag
+    def handle_starttag(self, tag, attrs):
+        for attr in attrs:
+            print "     attr:", attr
     def handle_data(self, data):
-        print "Encountered some data  :", data
+        print "Data     :", data
 
 parser = MyHTMLParser()
 
