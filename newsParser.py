@@ -1,6 +1,8 @@
 # -*- coding: utf-8 -*-
 
 import sys
+import urllib2
+import re
 
 if len(sys.argv) != 2:
 	print "!!! Attention!!! Please, put exactly one argument!"
@@ -30,38 +32,46 @@ class NewsStrategy():
 class VillageStrategy():
 	def parse(self):
 
-		myNewsObject = NewsObject()
-		myNewsObject.title = "Moscow vs Batman"
-		myNewsObject.preview = "Spider-Man was seen in Novosibirsk"
-		myNewsObject1 = NewsObject()
-		myNewsObject1.title = "mosmosmos"
-		myNewsObject1.preview = "spispispis"
-		myNewsObject2 = NewsObject()
-		myNewsObject2.title = "vilvilvil"
-		myNewsObject2.preview = "vilagevilagevilage"
 		villageList = []
-		villageList.append(myNewsObject)
-		villageList.append(myNewsObject1)
-		villageList.append(myNewsObject2)
+
+		villageRequest = urllib2.Request('http://www.the-village.ru/village/city')
+		villageResponse = urllib2.urlopen(villageRequest)
+		the_page = villageResponse.read()
+		matchObj = re.findall(r'<h2 class="post-title">(.*?)</h2>', the_page, re.DOTALL)
+
+		i = 0
+
+		for p in matchObj:
+			i = i+1
+			myNewsObject = NewsObject()
+			myNewsObject.title = p
+			villageList.append(myNewsObject)
+			if i > 10:
+				break
+
 		return villageList
 
 		
 class AfishaStrategy():
 	def parse(self):
 
-		myNewsObject = NewsObject()
-		myNewsObject.title = "There was Hitler cought under the bridge"
-		myNewsObject.preview = "Hitler got a tail!!!"
-		myNewsObject1 = NewsObject()
-		myNewsObject1.title = "blabla"
-		myNewsObject1.preview = "tratata"
-		myNewsObject2 = NewsObject()
-		myNewsObject2.title = "tururu"
-		myNewsObject2.preview = "klaklakla"
 		afishaList = []
-		afishaList.append(myNewsObject)
-		afishaList.append(myNewsObject1)
-		afishaList.append(myNewsObject2)
+
+		afishaRequest = urllib2.Request('http://www.afisha.ru/novosibirsk/cinema/')
+		afishaResponse = urllib2.urlopen(afishaRequest)
+		the_page = afishaResponse.read()
+		matchObj = re.findall(r'<p class="m-margin-btm-min">(.*?)</p>', the_page, re.DOTALL)
+
+		i = 0
+
+		for p in matchObj:
+			i = i+1
+			myNewsObject = NewsObject()
+			myNewsObject.title = p
+			afishaList.append(myNewsObject)
+			if i > 6:
+				break
+
 		return afishaList
 
 class NewsObject():
